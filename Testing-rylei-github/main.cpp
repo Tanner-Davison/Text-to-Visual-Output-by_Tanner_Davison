@@ -81,6 +81,7 @@ int main() {
 		for (char c : row) {
 			cout << c;
 		}
+
 		cout << endl;
 	}
 

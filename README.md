@@ -1,5 +1,5 @@
 ## Project Name: **Text To Visual Output**
-by: tanner Davison
+by: Tanner Davison
 
 ### Description
 **Text-to-Styled-HTML** is a C++ project designed to read input from a text file, process the content into custom-styled HTML elements, and display the generated HTML in a browser. The project also includes functionality to print the text data as a 2D character array in the terminal.

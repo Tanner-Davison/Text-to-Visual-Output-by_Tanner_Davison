@@ -1,6 +1,21 @@
+<b style="color:slategray;">Solve the puzzle!</b>
+Entity*
+delete myArrPointers[i];
 
+for (int i = 0;
+std::cout << *myArrPointers[i] << "\n";
+i < ARRAY_SIZE; i++) {
+myArrPointers[i] = 
+new Entity(i);
+int const ARRAY_SIZE = 3;
+}
+for (int i = 0; i < 3; i++) {
+std::cout << &myArrPointers[i] << "\n";
+myArrPointers[ARRAY_SIZE]{};
+}
+for (int i = 0; i < 3; i++) {
 
-4 4 -1 -1 0 3 0 
-3 3 -1 -1 0 4 0 
+myArrPointers[i] = nullptr;
+}
 
-testing
+Tanner Davison

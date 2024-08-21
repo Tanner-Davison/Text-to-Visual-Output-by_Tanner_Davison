@@ -3,14 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>C++ Generated</title>
+  <style>
+    body {     display:flex;
+     gap:3px;
+     flex-wrap:wrap;
+     }
+    #draggable {
+      position: relative;
+      min-width: 100px;
+      min-height: 100px;
+      overflow: visible
+      z-index: 1;
+      background-color: transparent;
+    }
+    .draggable-header {
+      position: relative;
+      display: flex;
+      width:max-content;
+      height:auto;
+      align-self: center;
+      justify-self: center;
+      cursor: move;
+      z-index: 10;
+      padding: 10px;
+      background-color: transparent;
+      color: #00000;
+    }
+  </style>
 </head>
 <body>
-<p style="display:flex; align-items:center; font-weight:bold; font-size:20px;"></p>
-<p style="display:flex; align-items:center; font-weight:bold; font-size:20px;"></p>
-<p style="display:flex; align-items:center; font-weight:bold; font-size:20px;">4 4 -1 -1 0 3 0 </p>
-<p style="display:flex; align-items:center; font-weight:bold; font-size:20px;">3 3 -1 -1 0 4 0 </p>
-<p style="display:flex; align-items:center; font-weight:bold; font-size:20px;"></p>
-<p style="display:flex; align-items:center; font-weight:bold; font-size:20px;">testing</p>
+<div id="draggable"><div class="draggable-header"><b style="color:slategray;">Solve the puzzle!</b></div></div>
+<div id="draggable"><div class="draggable-header">Entity*</div></div>
+<div id="draggable"><div class="draggable-header">delete myArrPointers[i];</div></div>
+<div id="draggable"><div class="draggable-header"></div></div>
+<div id="draggable"><div class="draggable-header">for (int i = 0;</div></div>
+<div id="draggable"><div class="draggable-header">std::cout << *myArrPointers[i] << "\n";</div></div>
+<div id="draggable"><div class="draggable-header">i < ARRAY_SIZE; i++) {</div></div>
+<div id="draggable"><div class="draggable-header">myArrPointers[i] = </div></div>
+<div id="draggable"><div class="draggable-header">new Entity(i);</div></div>
+<div id="draggable"><div class="draggable-header">int const ARRAY_SIZE = 3;</div></div>
+<div id="draggable"><div class="draggable-header">}</div></div>
+<div id="draggable"><div class="draggable-header">for (int i = 0; i < 3; i++) {</div></div>
+<div id="draggable"><div class="draggable-header">std::cout << &myArrPointers[i] << "\n";</div></div>
+<div id="draggable"><div class="draggable-header">myArrPointers[ARRAY_SIZE]{};</div></div>
+<div id="draggable"><div class="draggable-header">}</div></div>
+<div id="draggable"><div class="draggable-header">for (int i = 0; i < 3; i++) {</div></div>
+<div id="draggable"><div class="draggable-header"></div></div>
+<div id="draggable"><div class="draggable-header">myArrPointers[i] = nullptr;</div></div>
+<div id="draggable"><div class="draggable-header">}</div></div>
+<div id="draggable"><div class="draggable-header"></div></div>
+<div id="draggable"><div class="draggable-header">Tanner Davison</div></div>
+  <script>
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      var header = elmnt.querySelector('.draggable');
+      if (header) {
+        header.onmousedown = dragMouseDown;
+      } else {
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        elmnt.style.top = (elmnt.offsetTop - pos2) + 'px';
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + 'px';
+      }
+
+      function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+
+    const draggables = document.querySelectorAll('.draggable-header');
+    draggables.forEach(draggable => {
+      dragElement(draggable);
+    });
+  </script>
 </body>
 </html>

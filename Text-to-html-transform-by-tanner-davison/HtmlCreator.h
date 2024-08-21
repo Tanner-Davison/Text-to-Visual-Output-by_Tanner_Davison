@@ -10,8 +10,8 @@ public:
 	~CustomElement();
 
 	string getElement() const;
-	void setElement(const string& type = "div", const string& bodyP = "", const string& style = "");
-
+	void setElement(const string& type = "div", const string& bodyP = "");
+	void setCustomElement(const string& type = "div", const string& bodyP = "", const string& style = "");
 private:
 	string element;
 };

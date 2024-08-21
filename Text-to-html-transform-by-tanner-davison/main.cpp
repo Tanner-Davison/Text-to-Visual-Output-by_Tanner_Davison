@@ -25,14 +25,14 @@ int main() {
 
 	outputFile << line << endl;
 
-	// Determines the length of each ROW and create CustomElement objects 
-	while (getline(inputFile, line)) {
+
+	while (getline(inputFile, line)) {               // the length of each ROW and create CustomElement objects 
 		CustomElement element;
 		element.setElement("div", line);
 		elements.push_back(element);
 
-		//Total length of words from each line/ROW;
-		istringstream iss(line);
+
+		istringstream iss(line);                     //Total length of words from each line/ROW;
 		int count = 0;
 		string word;
 
@@ -146,7 +146,6 @@ int main() {
 
 	ShellExecuteA(NULL, "open", "prog3A.html", NULL, NULL, SW_SHOWNORMAL);
 
-	// prints the 2D character array in the os terminal
 	for (const auto& row : colPlayerRewards) {
 		for (char c : row) {
 			cout << c;
